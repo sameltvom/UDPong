@@ -39,6 +39,7 @@ public class DrawingArea extends Component {
 	public void drawBall(int x, int y) {
 		Graphics2D g = (Graphics2D)img.getGraphics();
 		g.drawImage(ballSprite, x, y, null);
+		// do the repainting stuff
 		repaint();
 	}
 
