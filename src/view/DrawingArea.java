@@ -40,6 +40,7 @@ public class DrawingArea extends Component {
 		Graphics2D g = (Graphics2D)img.getGraphics();
 		g.drawImage(ballSprite, x, y, null);
 		repaint();
+		// and here is a new comment
 	}
 
     public void paint(Graphics g) {
