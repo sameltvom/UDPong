@@ -15,15 +15,30 @@ import javax.swing.JPanel;
 
 public class DrawingArea extends Component {
 	private BufferedImage img;
+	private BufferedImage ballSprite;
 	
 	public DrawingArea() {
 		/* Create something to draw on */
 		img = new BufferedImage(640, 480, BufferedImage.TYPE_BYTE_INDEXED);
-		Graphics2D g = (Graphics2D)img.getGraphics();
+		
+		/* Load ball image */
+		try {
+			ballSprite = ImageIO.read(new File("ball.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		/*Graphics2D g = (Graphics2D)img.getGraphics();
 		g.setColor(Color.BLUE);
-		g.drawLine(10, 10, 20, 20);
+		g.drawLine(10, 10, 20, 20);*/
 		
 		this.setVisible(true);
+	}
+	
+	public void drawBall(int x, int y) {
+		Graphics2D g = (Graphics2D)img.getGraphics();
+		g.drawImage(ballSprite, x, y, null);
 	}
 
     public void paint(Graphics g) {
