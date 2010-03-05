@@ -6,15 +6,19 @@ import view.MainGUI;
 public class PaintingThread extends Thread {
 	private GameInformation gameInformation;
 	private MainGUI gui;
+	
 	public PaintingThread(GameInformation gameInformation, MainGUI gui) {
 		this.gameInformation = gameInformation;
 		this.gui = gui;
+		
 	}
 	
 	public void run() {
 		int ballX;
 		int ballY;
 		DrawingArea drawingArea = gui.getDrawingArea();
+		
+		
 		
 		while (true) {
 			ballX = gameInformation.getBallX();
